@@ -44,6 +44,10 @@ nav {
     display: flex;
 }
 
+.mode{
+    display: flex;
+}
+
 main {
     display: flex;
     justify-content: center;
