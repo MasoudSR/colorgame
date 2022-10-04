@@ -6,7 +6,7 @@ const randomGenerator = () => {
 };
 
 const randomRGB = () => {
-	return `rgb(${randomGenerator()},${randomGenerator()},${randomGenerator()})`;
+	return `rgb(${randomGenerator()}, ${randomGenerator()}, ${randomGenerator()})`;
 };
 
 const boxGenerator = () => {
@@ -28,5 +28,9 @@ for (let i = 0; i < 6; i++) {
 }
 
 function selectHandler(event) {
-	console.log(event.path[0].style.backgroundColor);
+	const selectedColor = event.path[0].style.backgroundColor;
+	const answer = document.querySelector(".question").innerText;
+	if (selectedColor === answer) {
+		alert("you win");
+	}
 }
