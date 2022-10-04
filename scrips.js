@@ -24,7 +24,7 @@ const boxGenerator = () => {
 	return { box, color };
 };
 
-const correct = Math.round(Math.random() * (mode-1));
+const correct = Math.round(Math.random() * (mode - 1));
 
 function selectHandler(event) {
 	const selectedColor = event.path[0].style.backgroundColor;
@@ -73,16 +73,16 @@ function difficultyHandler(event) {
 }
 
 function modeHandler(event) {
-    if (event.target.innerText === "3x2") {
-        mode=6
-        document.getElementById("3x2").classList.add("active");
+	if (event.target.innerText === "3x2") {
+		mode = 6;
+		document.getElementById("3x2").classList.add("active");
 		document.getElementById("3x3").classList.remove("active");
-    }else if (event.target.innerText === "3x3") {
-        mode=9
-        document.getElementById("3x3").classList.add("active");
+	} else if (event.target.innerText === "3x3") {
+		mode = 9;
+		document.getElementById("3x3").classList.add("active");
 		document.getElementById("3x2").classList.remove("active");
-    }
-    newGame()
+	}
+	newGame();
 }
 
 newGame();
