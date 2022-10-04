@@ -1,10 +1,10 @@
-.container{
+.container {
     display: grid;
     grid-template-columns: 100px 100px 100px;
     gap: 10px;
 }
 
-.colorBox{
+.colorBox {
     width: 100px;
     height: 100px;
     border-radius: 30px;

@@ -1,22 +1,32 @@
-const container = document.querySelector(".container")
+const container = document.querySelector(".container");
+container.addEventListener("click", selectHandler);
 
-const randomGenerator = ()=>{
-    return Math.round(Math.random()*255)
-}
+const randomGenerator = () => {
+	return Math.round(Math.random() * 255);
+};
 
-const randomRGB = ()=>{
-    return `rgb(${randomGenerator()},${randomGenerator()},${randomGenerator()})`
-}
+const randomRGB = () => {
+	return `rgb(${randomGenerator()},${randomGenerator()},${randomGenerator()})`;
+};
 
-const boxGenerator = ()=>{
-    const box = document.createElement("div")
-    box.classList.add("colorBox")
-    box.style.backgroundColor=`${randomRGB()}`
-    return box
-}
+const boxGenerator = () => {
+	const box = document.createElement("div");
+	box.classList.add("colorBox");
+	const color = randomRGB();
+	box.style.backgroundColor = `${color}`;
+	return { box, color };
+};
 
-console.log(boxGenerator())
+const correct = Math.round(Math.random() * 5);
 
 for (let i = 0; i < 6; i++) {
-    container.append(boxGenerator())
+	const box = boxGenerator();
+	if (i === correct) {
+		document.querySelector(".question").innerText = box.color;
+	}
+	container.append(box.box);
+}
+
+function selectHandler(event) {
+	console.log(event.path[0].style.backgroundColor);
 }
