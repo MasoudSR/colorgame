@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -25,34 +25,37 @@ nav {
     background-color: rgb(215, 215, 215);
 }
 
-.button{
+.button {
     padding: 10px;
     transition: all .3s linear;
     cursor: pointer;
 }
 
-.button:hover{
+.button:hover {
     background-color: aliceblue;
 }
 
-.active{
-    background-color: aqua;
+.active {
+    background-color: rgb(117, 169, 169);
 }
 
 .difficulty {
     display: flex;
 }
 
-main{
-display: flex;
-justify-content: center;
-padding: 30px;
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
 }
 
 .container {
     display: grid;
     grid-template-columns: 100px 100px 100px;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .colorBox {

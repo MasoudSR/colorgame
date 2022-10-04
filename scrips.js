@@ -1,5 +1,8 @@
 const container = document.querySelector(".container");
 container.addEventListener("click", selectHandler);
+document.getElementById("newgame").addEventListener("click",newGame)
+
+let life = 3;
 
 const randomGenerator = () => {
 	return Math.round(Math.random() * 255);
@@ -19,13 +22,7 @@ const boxGenerator = () => {
 
 const correct = Math.round(Math.random() * 5);
 
-for (let i = 0; i < 6; i++) {
-	const box = boxGenerator();
-	if (i === correct) {
-		document.querySelector(".question").innerText = box.color;
-	}
-	container.append(box.box);
-}
+
 
 function selectHandler(event) {
 	const selectedColor = event.path[0].style.backgroundColor;
@@ -33,6 +30,23 @@ function selectHandler(event) {
 	if (selectedColor === answer) {
 		alert("you win");
 	}
+    else{
+        life--
+        document.getElementById("life").innerText=life
+        if (life === 0) {
+            alert("you lose")
+        }
+    }
 }
 
-let life = 2
+
+function newGame(){
+    container.innerHTML=""
+    for (let i = 0; i < 6; i++) {
+        const box = boxGenerator();
+        if (i === correct) {
+            document.querySelector(".question").innerText = box.color;
+        }
+        container.append(box.box);
+    }
+}
