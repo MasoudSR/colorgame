@@ -1,3 +1,5 @@
+const container = document.querySelector(".container")
+
 const randomGenerator = ()=>{
     return Math.round(Math.random()*255)
 }
@@ -7,7 +9,14 @@ const randomRGB = ()=>{
 }
 
 const boxGenerator = ()=>{
-    
+    const box = document.createElement("div")
+    box.classList.add("colorBox")
+    box.style.backgroundColor=`${randomRGB()}`
+    return box
 }
 
-console.log(randomRGB())
+console.log(boxGenerator())
+
+for (let i = 0; i < 6; i++) {
+    container.append(boxGenerator())
+}
