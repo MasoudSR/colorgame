@@ -34,3 +34,5 @@ function selectHandler(event) {
 		alert("you win");
 	}
 }
+
+let life = 2
